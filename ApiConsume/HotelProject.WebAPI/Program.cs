@@ -22,7 +22,7 @@ builder.Services.AddScoped<IRoomService, RoomManager>();
 builder.Services.AddScoped<IServiceDal, EfServiceDal>();
 builder.Services.AddScoped<IServiceService, ServiceManager>();
 
-builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>();
+builder.Services.AddScoped<ITestimonialDal, EfTestimonialDal>() ;
 builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 
 builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();

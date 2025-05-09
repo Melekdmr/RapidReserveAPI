@@ -33,7 +33,7 @@ builder.Services.AddCors(opt =>
 	opt.AddPolicy("OtelApiCors", opts =>
 	{
 		opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
-	});
+	}); 
 });
 
 

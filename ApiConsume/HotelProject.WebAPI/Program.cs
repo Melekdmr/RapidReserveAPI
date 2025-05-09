@@ -28,7 +28,13 @@ builder.Services.AddScoped<ITestimonialService, TestimonialManager>();
 builder.Services.AddScoped<ISubscribeDal, EfSubscribeDal>();
 builder.Services.AddScoped<ISubscribeService, SubscribeManager>();
 
-
+builder.Services.AddCors(opt =>
+{
+	opt.AddPolicy("OtelApiCors", opts =>
+	{
+		opts.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod();
+	});
+});
 
 
 
@@ -43,6 +49,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+app.UseCors("OtelApiCors");
 
 app.UseAuthorization();
 

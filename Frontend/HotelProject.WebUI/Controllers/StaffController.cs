@@ -29,7 +29,7 @@ namespace HotelProject.WebUI.Controllers
 			var client = _httpClientFactory.CreateClient();  //_httpClientFactory.CreateClient() ile bir HttpClient örneği oluşturuluyor. HttpClient, dış servislere (API'lere) HTTP istekleri göndermek için kullanılır.
 															 //CreateClient(), DI aracılığıyla alınan IHttpClientFactory'nin bir metodudur. Bu metot, yeniden kullanılabilir HttpClient nesnesi oluşturur.
 
-			var responseMessage = await client.GetAsync("https://localhost:7064/api/Staff");//GetAsync metodu, belirtilen URL'ye (bu örnekte https://localhost:7064/api/Staff) GET isteği gönderir. Bu API endpoint'ine bir GET isteği yapılır.
+			var responseMessage = await client.GetAsync("https://localhost:7064/api/Staff");//GetAsync metodu, belirtilen URL'ye bu örnekte    GET isteği gönderir. Bu API endpoint'ine bir GET isteği yapılır.
 			if (responseMessage.IsSuccessStatusCode)//IsSuccessStatusCode özelliği, HTTP yanıtının başarılı olup olmadığını kontrol eder
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();//HTTP cevabının gövdesindeki içeriği string formatında okur. Bu içerik genellikle JSON formatında gelir, çünkü API genellikle JSON verisi döndürür.
@@ -38,7 +38,7 @@ namespace HotelProject.WebUI.Controllers
 								var values = JsonConvert.DeserializeObject<List<StaffViewModel>>(jsonData); // jsonData içinde gelen JSON verisi, StaffViewModel türündeki bir List'e dönüştürülür.
 				return View(values); //values değişkenini, yani StaffViewModel listesine dönüştürülmüş olan personel verilerini, ilgili view'a gönderir.
 			}
-			return View(); //ğer API'den başarılı bir cevap alınmazsa (örneğin, IsSuccessStatusCode false dönerse), hiçbir şey gönderilmeden boş bir view döndürülür. 
+			return View(); //Eğer API'den başarılı bir cevap alınmazsa (örneğin, IsSuccessStatusCode false dönerse), hiçbir şey gönderilmeden boş bir view döndürülür. 
 		}
 
 		[HttpGet]

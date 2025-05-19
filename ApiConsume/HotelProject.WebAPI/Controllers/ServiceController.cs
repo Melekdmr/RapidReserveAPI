@@ -32,8 +32,8 @@ namespace HotelProject.WebAPI.Controllers
 				return StatusCode(201);
 			}
 
-			[HttpDelete]
-			public IActionResult DeleteService(int id)
+		[HttpDelete("{id}")]
+		public IActionResult DeleteService(int id)
 			{
 				var values = _serviceService.TGetByID(id);
 				_serviceService.TDelete(values);

@@ -4,6 +4,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 builder.Services.AddHttpClient(); //UI katmanýnda API'ye istek göndermek için HttpClient kullanýlýr. Bu servis, dýþ API'lere HTTP istekleri yapmanýzý saðlar.
 
+builder.Services.AddAutoMapper(typeof(Program));
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

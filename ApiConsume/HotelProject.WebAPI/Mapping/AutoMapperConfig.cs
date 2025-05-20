@@ -9,7 +9,7 @@ namespace HotelProject.WebAPI.Mapping
 		public AutoMapperConfig()//Bu sınıfın kurucu metodudur (constructor). Uygulama başlatıldığında çalışır. İçerisinde haritalama kuralları tanımlanır.
 
 		{
-			CreateMap<RoomAddDto, Room>();//oomAddDto → Room sınıfına veri dönüştürmesini tanımlar.
+			CreateMap<RoomAddDto, Room>();//RoomAddDto → Room sınıfına veri dönüştürmesini tanımlar.
 			CreateMap<Room, RoomAddDto>();
 
 			CreateMap<UpdateRoomDto, Room>().ReverseMap(); //.ReverseMap() sayesinde  çift yönlü dönüşüm yapılabilir.

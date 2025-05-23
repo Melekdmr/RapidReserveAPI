@@ -22,11 +22,14 @@ namespace HotelProject.WebUI.Controllers
 		{
 			return View();
 		}
-
 		[HttpPost]
 		public async Task<IActionResult> Index(CreateNewUserDto createNewUserDto)
 		{
-			if (!ModelState.IsValid)  return View(); 
+			if (!ModelState.IsValid)
+			{
+				return View(createNewUserDto);  // Model verisini tekrar view'a gönder ki kullanıcı girdiği bilgileri kaybetmesin
+			}
+
 			var appUser = new AppUser()
 			{
 				Name = createNewUserDto.Name,
@@ -34,12 +37,23 @@ namespace HotelProject.WebUI.Controllers
 				Email = createNewUserDto.Mail,
 				UserName = createNewUserDto.UserName,
 			};
+
 			var result = await _userManager.CreateAsync(appUser, createNewUserDto.Password);
+
 			if (result.Succeeded)
 			{
 				return RedirectToAction("Index", "Login");
 			}
-			return View();
+			else
+			{
+				// Hataları ModelState'e ekle ki view'da gösterilebilsin
+				foreach (var error in result.Errors)
+				{
+					ModelState.AddModelError("", error.Description);
+				}
+				return View(createNewUserDto);
+			}
 		}
+
 	}
 }

@@ -37,9 +37,10 @@ namespace HotelProject.WebAPI.Controllers
 			_bookingService.TDelete(values);
 			return Ok();
 		}
-		[HttpPut]
-		public IActionResult UpdateBooking(Booking booking)
+		[HttpPut("{id}")]
+		public IActionResult UpdateBooking(int id, Booking booking)
 		{
+			booking.BookingID = id; // ID'yi emin olmak için set edin
 			_bookingService.TUpdate(booking);
 			return Ok();
 		}

@@ -1,0 +1,70 @@
+﻿@model List<ResultBookingDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+
+
+
+<div class="card-title">
+    <h4>Rezervasyonlar</h4>
+</div>
+<div class="table-responsive">
+    <table class="table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Misafir</th>
+                <th>Giriş Tarihi</th>
+                <th>Çıkış Tarihi</th>
+                <th>Durum</th>
+                <th>Onayla</th>
+                <th>İptal Et</th>
+                <th>Beklet</th>
+                <th>Güncelle</th>
+                <th>Detaylar</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                <tr>
+                    <th>@count</th>
+                    <td>@item.Name</td>
+                    <td>@(((DateTime)item.Checkin).ToString("dd-MMM-yyyy"))</td>
+                    <td>@(((DateTime)item.CheckOut).ToString("dd-MMM-yyyy"))</td>
+                    <td>
+                        <span class="badge badge-primary px-2">@item.Status</span>
+                    </td>
+                    <td>
+                        <a href="/BookingAdmin/ApprovedReservation/@item.BookingID" class="btn btn-outline-success">
+                            <i class="fas fa-check-circle"></i> Onayla
+                        </a>
+                    </td>
+                    <td>  <a href="#" class="btn btn-outline-danger"><i class="fas fa-times-circle"></i> İptal Et </a>  </td>
+                    <td>
+                        <a href="#" class="btn btn-outline-primary">
+                            <i class="fas fa-hourglass-half"></i> Beklet
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-outline-warning">
+                            <i class="fa fa-edit"></i> Güncelle
+                        </a>
+                    </td>
+                    <td>
+                        <a href="#" class="btn btn-outline-dark">
+                            <i class="fa fa-info-circle"></i> Detaylar
+                        </a>
+                    </td>
+
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+

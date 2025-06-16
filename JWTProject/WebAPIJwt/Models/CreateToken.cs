@@ -17,7 +17,7 @@ namespace WebAPIJwt.Models
 				audience: "http://localhost",
 				claims: null, // Bu parametreyi ekleyin
 				notBefore: DateTime.Now,
-				expires: DateTime.Now.AddSeconds(30),
+				expires: DateTime.Now.AddSeconds(15),
 				signingCredentials: signingCredentials
 			);
 			JwtSecurityTokenHandler handler = new JwtSecurityTokenHandler();

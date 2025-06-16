@@ -31,7 +31,8 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
 			// Ýmzanýn doðrulanmasýný zorunlu tutuyoruz
 			ValidateIssuerSigningKey = true,
-			ValidateLifetime=true  //tokenýn hayatta kalma süresini kontrol et
+			ValidateLifetime=true, //tokenýn hayatta kalma süresini kontrol et
+			ClockSkew=TimeSpan.Zero
 		};
 	});
 

@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
+using System.Net;
 using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -22,7 +23,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 			// Token’ýn oluþturulduðu geçerli yayýncý (issuer)
 			ValidIssuer = "http://localhost",
 
-			// Token’ýn geçerli olduðu hedef kitle (audience)
+			// Token’ýn geçerli olduðu dinleyici (audience)
 			ValidAudience = "http://localhost",
 			 
 
@@ -32,7 +33,9 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 			// Ýmzanýn doðrulanmasýný zorunlu tutuyoruz
 			ValidateIssuerSigningKey = true,
 			ValidateLifetime=true, //tokenýn hayatta kalma süresini kontrol et
-			ClockSkew=TimeSpan.Zero
+			ClockSkew=TimeSpan.Zero  //Token süresi dolduðu anda anýnda geçersiz olur.
+
+
 		};
 	});
 
@@ -50,9 +53,10 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-app.UseAuthentication(); 
+app.UseAuthentication(); //	Token kontrolü, kullanýcý doðrulama Eðer geçerliyse, kullanýcý kimliði oluþturulur.
 
-app.UseAuthorization();
+app.UseAuthorization();//Kullanýcýnýn yetkilerini kontrol etme
+
 
 app.MapControllers();
 

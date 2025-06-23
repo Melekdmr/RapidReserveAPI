@@ -18,7 +18,7 @@ namespace HotelProject.WebUI.Controllers
 		public async Task<IActionResult> Index()
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync("https://localhost:7064/api/Service");
+			var responseMessage = await client.GetAsync("http://localhost:5035/api/Service");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -43,7 +43,7 @@ namespace HotelProject.WebUI.Controllers
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(createService);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync("https://localhost:7064/api/Service", stringContent);
+			var responseMessage = await client.PostAsync("http://localhost:5035/api/Service", stringContent);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
@@ -54,7 +54,7 @@ namespace HotelProject.WebUI.Controllers
 		public async Task<IActionResult> DeleteService(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.DeleteAsync($"https://localhost:7064/api/Service/{id}");
+			var responseMessage = await client.DeleteAsync($"http://localhost:5035/api/Service/{id}");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
@@ -66,7 +66,7 @@ namespace HotelProject.WebUI.Controllers
 		public async Task<IActionResult> UpdateService(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync($"https://localhost:7064/api/Service/{id}");
+			var responseMessage = await client.GetAsync($"http://localhost:5035/api/Service/{id}");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -86,7 +86,7 @@ namespace HotelProject.WebUI.Controllers
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(UpdateServiceDto);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync("https://localhost:7064/api/Service/", stringContent);
+			var responseMessage = await client.PutAsync("http://localhost:5035/api/Service/", stringContent);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");

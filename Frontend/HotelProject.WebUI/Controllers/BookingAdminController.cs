@@ -18,7 +18,7 @@ namespace HotelProject.WebUI.Controllers
 		public async Task<IActionResult> Index()
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync("https://localhost:7064/api/Booking");
+			var responseMessage = await client.GetAsync("http://localhost:5035/api/Booking");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -33,7 +33,7 @@ namespace HotelProject.WebUI.Controllers
 			{
 				// Mevcut rezervasyonu getir
 				var client = _httpClientFactory.CreateClient();
-				var getResponse = await client.GetAsync($"https://localhost:7064/api/Booking/{id}");
+				var getResponse = await client.GetAsync($"http://localhost:5035/api/Booking/{id}");
 
 				if (getResponse.IsSuccessStatusCode)
 				{
@@ -46,7 +46,7 @@ namespace HotelProject.WebUI.Controllers
 					// API'ye gönder (ID ile)
 					var updateJsonData = JsonConvert.SerializeObject(booking);
 					StringContent stringContent = new StringContent(updateJsonData, Encoding.UTF8, "application/json");
-					var responseMessage = await client.PutAsync($"https://localhost:7064/api/Booking/{id}", stringContent);
+					var responseMessage = await client.PutAsync($"http://localhost:5035/api/Booking/{id}", stringContent);
 
 					if (responseMessage.IsSuccessStatusCode)
 					{

@@ -29,7 +29,7 @@ namespace HotelProject.WebUI.Controllers
 			var client = _httpClientFactory.CreateClient();  //_httpClientFactory.CreateClient() ile bir HttpClient örneği oluşturuluyor. HttpClient, dış servislere (API'lere) HTTP istekleri göndermek için kullanılır.
 															 //CreateClient(), DI aracılığıyla alınan IHttpClientFactory'nin bir metodudur. Bu metot, yeniden kullanılabilir HttpClient nesnesi oluşturur.
 
-			var responseMessage = await client.GetAsync("https://localhost:7064/api/Staff");//GetAsync metodu, belirtilen URL'ye bu örnekte    GET isteği gönderir. Bu API endpoint'ine bir GET isteği yapılır.
+			var responseMessage = await client.GetAsync("http://localhost:5035/api/Staff");//GetAsync metodu, belirtilen URL'ye bu örnekte    GET isteği gönderir. Bu API endpoint'ine bir GET isteği yapılır.
 			if (responseMessage.IsSuccessStatusCode)//IsSuccessStatusCode özelliği, HTTP yanıtının başarılı olup olmadığını kontrol eder
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();//HTTP cevabının gövdesindeki içeriği string formatında okur. Bu içerik genellikle JSON formatında gelir, çünkü API genellikle JSON verisi döndürür.
@@ -52,7 +52,7 @@ namespace HotelProject.WebUI.Controllers
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(model);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await client.PostAsync("https://localhost:7064/api/Staff",stringContent);
+			var responseMessage = await client.PostAsync("http://localhost:5035/api/Staff",stringContent);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
@@ -63,7 +63,7 @@ namespace HotelProject.WebUI.Controllers
 		public async Task<IActionResult> DeleteStaff(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.DeleteAsync($"https://localhost:7064/api/Staff/{id}");
+			var responseMessage = await client.DeleteAsync($"http://localhost:5035/api/Staff/{id}");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");
@@ -74,7 +74,7 @@ namespace HotelProject.WebUI.Controllers
 		public async Task<IActionResult> UpdateStaff(int id)
 		{
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync($"https://localhost:7064/api/Staff/{id}");
+			var responseMessage = await client.GetAsync($"http://localhost:5035/api/Staff/{id}");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();
@@ -90,7 +90,7 @@ namespace HotelProject.WebUI.Controllers
 			var client = _httpClientFactory.CreateClient();
 			var jsonData = JsonConvert.SerializeObject(model);
 			StringContent stringContent = new StringContent(jsonData, Encoding.UTF8, "application/json");
-			var responseMessage = await client.PutAsync("https://localhost:7064/api/Staff/",stringContent);
+			var responseMessage = await client.PutAsync("http://localhost:5035/api/Staff/",stringContent);
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				return RedirectToAction("Index");

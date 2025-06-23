@@ -17,7 +17,7 @@ namespace HotelProject.WebUI.ViewComponents.Default
 		{
 
 			var client = _httpClientFactory.CreateClient();
-			var responseMessage = await client.GetAsync("https://localhost:7064/api/About");
+			var responseMessage = await client.GetAsync("http://localhost:5035/api/About");
 			if (responseMessage.IsSuccessStatusCode)
 			{
 				var jsonData = await responseMessage.Content.ReadAsStringAsync();

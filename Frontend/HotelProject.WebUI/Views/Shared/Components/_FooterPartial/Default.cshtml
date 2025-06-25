@@ -1,11 +1,16 @@
-﻿<div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
+﻿<!-- FOOTER -->
+<div class="container-fluid bg-dark text-light footer wow fadeIn" data-wow-delay="0.1s">
     <div class="container pb-5">
         <div class="row g-5">
             <div class="col-md-6 col-lg-4">
                 <div class="bg-primary rounded p-4">
-                    <a href="index.html"><h1 class="text-white text-uppercase mb-3">Hotelier</h1></a>
+                    <a href="index.html">
+                        <h1 class="text-white text-uppercase mb-3">Hotelier</h1>
+                    </a>
                     <p class="text-white mb-0">
-                        <a class="text-dark fw-medium" href="https://htmlcodex.com/hotel-html-template-pro">Asp.Net Core Api ile Hazırladığımız Web Tabanlı Online Rezervasyon Uygulamasıdır. Geliştrici: Melek DEMİR</a>
+                        <a class="text-dark fw-medium" href="https://htmlcodex.com/hotel-html-template-pro">
+                            Asp.Net Core Api ile Hazırladığımız Web Tabanlı Online Rezervasyon Uygulamasıdır. Geliştirici: Melek DEMİR
+                        </a>
                     </p>
                 </div>
             </div>
@@ -28,7 +33,8 @@
                         <a class="btn btn-link" href="">Hakkımızda</a>
                         <a class="btn btn-link" href="">İletişim</a>
                         <a class="btn btn-link" href="">Gizlilik Politikası</a>
-                        <a class="btn btn-link" href="">Şartlar ve Koşullar</a>
+                        <!-- Şartlar ve Koşullar Butonu -->
+                        <a class="btn btn-link" href="#" data-bs-toggle="modal" data-bs-target="#termsModal">Şartlar ve Koşullar</a>
                         <a class="btn btn-link" href="">Destek</a>
                     </div>
                     <div class="col-md-6">
@@ -48,8 +54,6 @@
             <div class="row">
                 <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
                     &copy; Tüm Hakları Saklıdır @DateTime.Now.Year
-
-                  
                     Tasarımcı <a class="border-bottom" href="https://htmlcodex.com">HTML Codex</a>
                 </div>
                 <div class="col-md-6 text-center text-md-end">
@@ -61,6 +65,36 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</div>
+
+<!-- TURUNCU - MAVİ - BEYAZ POP-UP MODAL -->
+<div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content" style="background-color: #ffffff; border: 4px solid #e29b24; border-radius: 12px;">
+
+            <div class="modal-header" style="background-color:#0c152c; color: white;">
+                <h5 class="modal-title" id="termsModalLabel">Şartlar ve Koşullar</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Kapat"></button>
+            </div>
+
+            <div class="modal-body" style="background-color: #ffffff; color: black;">
+                <h6 style="color: #e29b24;">Kullanım Şartları</h6>
+                <p>Bu web sitesi, Hotelier tarafından geliştirilmiştir. Web sitemizi kullanarak aşağıdaki şartları kabul etmiş sayılırsınız:</p>
+                <ul>
+                    <li>Site üzerindeki tüm içerikler bilgi amaçlıdır.</li>
+                    <li>Rezervasyonlar, sistemdeki uygunluk durumuna göre onaylanır.</li>
+                    <li>Kullanıcı bilgileri gizlilik politikamız kapsamında korunur.</li>
+                    <li>Web sitesinde yapılan değişiklikler önceden haber verilmeksizin uygulanabilir.</li>
+                </ul>
+                <p>Daha fazla bilgi için <a href="#" style="color: #0d6efd; font-weight: 500;">İletişim</a> sayfamızı ziyaret edebilirsiniz.</p>
+            </div>
+
+            <div class="modal-footer" style="background-color: white;">
+                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Kapat</button>
+            </div>
+
         </div>
     </div>
 </div>

@@ -15,6 +15,21 @@ namespace HotelProject.DataAccessLayer.Concrete
 		{
 			optionsBuilder.UseSqlServer("server=MELEKDMR\\SQLEXPRESS;initial catalog=RapidApiDb;integrated security=true;TrustServerCertificate=true");
 		}
+
+		protected override void OnModelCreating(ModelBuilder builder)
+		{
+			base.OnModelCreating(builder);
+
+			builder.Entity<Room>(entry =>
+			{
+				entry.ToTable("Rooms", tb =>
+				{
+					tb.HasTrigger("Roomincrease");
+					tb.HasTrigger("Roomdecrease");
+				});
+			});
+		}
+
 		public DbSet<Room> Rooms { get; set; }
 		public DbSet<Service> Services { get; set; }
 		public DbSet<Staff> Staffs { get; set; }

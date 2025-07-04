@@ -1,0 +1,51 @@
+﻿@model List<ResultGuestDto>
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/AdminLayout/_AdminLayout.cshtml";
+    int count = 0;
+}
+
+}
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
+
+
+
+<table class="table table-bordered">
+    <tr>
+        <th>#</th>
+        <th>Ad</th>
+        <th>Soyad</th>
+        <th>Şehir</th>
+        <th> Sil</th>
+        <th> Güncelle</th>
+
+    </tr>
+    @foreach (var item in Model)
+    {
+        count++;
+        <tr>
+            <th>@count</th>
+            <td>@item.Name</td>
+            <td>@item.SurName</td>
+            <td>@item.City</td>
+            <td>
+                <a href="/Guest/DeleteGuest/@item.GuestID" class="btn btn-danger"><i class="fa fa-trash"></i> Sil </a>
+            </td>
+            <td>
+                <a href="/Guest/UpdateGuest/@item.GuestID" class="btn btn-success">
+                    <i class="fa fa-edit"></i> Güncelle
+                </a>
+            </td>
+
+        </tr>
+    }
+</table>
+<a href="/Guest/AddGuest/" class="btn" style="background-color: #ff6600; color: white;">
+    <i class=" fas fa-user-check"></i> Yeni Misafir Girişi
+</a>
+
+
+
+
+

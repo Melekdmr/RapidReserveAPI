@@ -13,6 +13,14 @@ namespace HotelProject.WebAPI.Controllers
 	{
 		private readonly IContactService _contactService;
 
+
+		[HttpGet]
+		public IActionResult ContactInboxList()
+		{
+			var values = _contactService.TGetList();
+			return Ok(values);
+		}
+
 		public ContactController(IContactService contactService)
 		{
 			_contactService = contactService;

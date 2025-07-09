@@ -14,7 +14,7 @@ builder.Services.AddControllersWithViews();
 // FluentValidation konfigürasyonu
 builder.Services.AddFluentValidationAutoValidation(config =>
 {
-    config.DisableDataAnnotationsValidation = true; // Önemli: DataAnnotations'ý kapat aksi halde fluent validation çalýþmaz mesjalar görünmez
+    config.DisableDataAnnotationsValidation = true; // Önemli: DataAnnotations'ý kapat (required gibi) aksi halde fluent validation çalýþmaz mesjalar görünmez
 });
 builder.Services.AddFluentValidationClientsideAdapters();//Formda kullanýcý yazmaya baþladýðýnda anýnda validation yapar
 //Sayfa yenilenmeden hata mesajlarý gösterir

@@ -47,25 +47,18 @@ namespace HotelProject.DataAccessLayer.Concrete
 				✅ tb: Tablo yapılandırma nesnesi(TableBuilder)
 				✅ Lambda expression ile tablo - özel yapılandırmalar*/
 				{
-					tb.HasTrigger("Roomincrease");
+					tb.HasTrigger("Roomincrease"); // ✅ INSERT tetikleyicisi
 					tb.HasTrigger("Roomdecrease");
 				});
 			});
 
 			builder.Entity<Guest>(entry =>
-			{/*
-		 ✅ builder: ModelBuilder nesnesi
-     ✅ Entity<Guest>: Guest sınıfı için yapılandırma başlat
-     ✅ entry: Guest entity'si için yapılandırma nesnesi (EntityTypeBuilder<Guest>)
-     ✅ Lambda expression(=>) kullanılarak yapılandırma bloğu açılır*/
+			{
 				entry.ToTable("Guests", tb =>
-				/*✅ entry.ToTable: Bu entity'nin hangi tabloya karşılık geldiğini belirtir
-				✅ "Guests": Veritabanındaki tablo adı
-				✅ tb: Tablo yapılandırma nesnesi(TableBuilder)
-				✅ Lambda expression ile tablo - özel yapılandırmalar*/
+
 				{
-					tb.HasTrigger("Guestincrease");   // ✅ INSERT tetikleyicisi
-					tb.HasTrigger("Guestdecrease");   // ✅ DELETE tetikleyicisi
+					tb.HasTrigger("Guestincrease");  
+					tb.HasTrigger("Guestdecrease"); 
 					
 				});
 			});
@@ -81,5 +74,6 @@ namespace HotelProject.DataAccessLayer.Concrete
 		
 		public DbSet<Guest> Guests { get; set; }
 		public DbSet<Contact> Contacts { get; set; }
+		public DbSet<SendMessage> SendMessages{ get; set; }
 	}
 }

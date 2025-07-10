@@ -6,10 +6,10 @@
 }
 
 <div class="col-lg-12">
-    <div class="card">
-        <div class="card-body">
+  
+      
             <div class="email-left-box">
-                <a href="email-compose.html" class="btn btn-primary btn-block">Yeni Mesaj</a>
+        <a href="/AdminContact/AddSendMessage/" class="btn btn-primary btn-block">Yeni Mesaj</a>
                 @await Html.PartialAsync("SideBarAdminContactPartial")
 
                 <h5 class="mt-5 m-b-10">Kategoriler</h5>
@@ -49,7 +49,7 @@
                                 <div class="subject">
                                   @item.Message.Substring(0,90)
                                 </div>
-                                <div class="date">@item.Date.</div>
+                            <div class="date"> @item.Date.ToString("dd.MM.yyyy")</div>
                             </div>
                         </a>
                     </div>
@@ -59,5 +59,4 @@
                 <!-- panel -->
             </div>
         </div>
-    </div>
-</div>
+

@@ -34,5 +34,12 @@ namespace HotelProject.WebAPI.Controllers
 			return StatusCode(201);
 		}
 
+		[HttpGet("{id}")]
+		public IActionResult GetSendMessage(int id)
+		{
+			var values = _contactService.TGetByID(id);
+			return Ok(values);
+		}
+
 	}
 }

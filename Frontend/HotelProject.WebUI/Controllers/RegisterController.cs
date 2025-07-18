@@ -3,10 +3,12 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 using HotelProject.WebUI.Dtos.RegisterDto;
+using Microsoft.AspNetCore.Authorization;
 
 
 namespace HotelProject.WebUI.Controllers
 {
+	[AllowAnonymous]
 	public class RegisterController : Controller
 	{
 		private readonly UserManager<AppUser> _userManager;

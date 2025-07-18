@@ -4,6 +4,10 @@ using HotelProject.DataAccessLayer.Concrete;
 using HotelProject.EntityLayer.Concrete;
 using HotelProject.WebUI.Dtos.GuestDto;
 using HotelProject.WebUI.ValidationRules.GuestValidationRules;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Authorization;
+using NuGet.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -28,6 +32,14 @@ builder.Services.AddIdentity<AppUser, AppRole>().AddEntityFrameworkStores<Contex
 builder.Services.AddHttpClient(); //UI katmanýnda API'ye istek göndermek için HttpClient kullanýlýr. Bu servis, dýþ API'lere HTTP istekleri yapmanýzý saðlar.
 
 builder.Services.AddAutoMapper(typeof(Program));
+builder.Services.AddMvc(config => //config adýnda bir ayar nesnesi veriliyor
+{
+	var policy = new AuthorizationPolicyBuilder() //yeni bir yetkilendirme politikasý 
+	.RequireAuthenticatedUser() //Sadece giriþ yapmýþ kullanýcýlar eriþebilsin
+	.Build();
+	config.Filters.Add(new AuthorizeFilter(policy)); //Filters kýsmýna ekleyerek, tüm sayfalara bu kuralý otomatik uygulamýþ oluyoruz. Yani her controller ya da action’a tek tek[Authorize] yazmamýza gerek kalmýyor.
+
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,10 +52,10 @@ if (!app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection(); 
 app.UseStaticFiles();
-
+app.UseAuthentication(); //kim olduðuna bakar
 app.UseRouting();
 
-app.UseAuthorization();
+app.UseAuthorization(); //yetki kontrolü
 
 app.MapControllerRoute(
 	name: "default",

@@ -40,6 +40,13 @@ builder.Services.AddMvc(config => //config adýnda bir ayar nesnesi veriliyor
 	config.Filters.Add(new AuthorizeFilter(policy)); //Filters kýsmýna ekleyerek, tüm sayfalara bu kuralý otomatik uygulamýþ oluyoruz. Yani her controller ya da action’a tek tek[Authorize] yazmamýza gerek kalmýyor.
 
 });
+builder.Services.ConfigureApplicationCookie(options =>
+{
+	options.Cookie.HttpOnly = true;
+	options.ExpireTimeSpan = TimeSpan.FromMinutes(10);
+	options.LoginPath = "/Login/Index/";
+
+});
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

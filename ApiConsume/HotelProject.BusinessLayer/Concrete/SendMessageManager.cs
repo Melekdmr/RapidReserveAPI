@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.BusinessLayer.Concrete
 {
-	public class SendMessageManager:ISendMessageService
+	public class SendMessageManager : ISendMessageService
 	{
 		private readonly ISendMessageDal _sendMessageDal;
 
@@ -31,6 +31,11 @@ namespace HotelProject.BusinessLayer.Concrete
 		public List<SendMessage> TGetList()
 		{
 			return _sendMessageDal.GetList();
+		}
+
+		public int TGetSendMessageCount()
+		{
+			return _sendMessageDal.GetSendMessageCount();
 		}
 
 		public void TInsert(SendMessage t)

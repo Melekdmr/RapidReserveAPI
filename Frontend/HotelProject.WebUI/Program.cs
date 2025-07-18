@@ -56,6 +56,8 @@ if (!app.Environment.IsDevelopment())
 	// The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
 	app.UseHsts();
 }
+app.UseStatusCodePagesWithReExecute("/ErrorPages/Error404", "?code={0}"); //?code={0} kýsmý, gelen hata kodunu (mesela 404, 500 gibi) o sayfaya parametre olarak gönderir.
+
 
 app.UseHttpsRedirection(); 
 app.UseStaticFiles();

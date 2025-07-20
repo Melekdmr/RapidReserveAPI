@@ -25,22 +25,23 @@
 
             <div class="col-md-6 wow fadeIn" data-wow-delay="0.1s">
                 <iframe class="position-relative rounded w-100 h-100"
-                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48146.94381649733!2d28.92617974000046!3d41.04310540056382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab75ad870363d%3A0x25bc05b50533efb0!2zQmV5b8SfbHUvxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1750866053213!5m2!1str!2str"
-                        frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
-                        tabindex="0"></iframe>
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d48146.94381649733!2d28.92617974000046!3d41.04310540056382!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14cab75ad870363d%3A0x25bc05b50533efb0!2zQmV5b8SfbHUvxLBzdGFuYnVs!5e0!3m2!1str!2str!4v1750866053213!5m2!1str!2str"
+                frameborder="0" style="min-height: 350px; border:0;" allowfullscreen="" aria-hidden="false"
+                tabindex="0"></iframe>
             </div>
-           
+
 
             <div class="col-md-6">
                 <div class="wow fadeInUp" data-wow-delay="0.2s">
-            
-                        <form method ="post" asp-action="SendMessage" asp-controller="Contact">
+
+                    <form method="post" asp-action="SendMessage" asp-controller="Contact">
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
                                     <input type="text" class="form-control" id="name" placeholder="Adınız soyadınız" name="Name">
                                     <label for="name">Adınız Soyadınız</label>
                                 </div>
+
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
@@ -48,10 +49,20 @@
                                     <label for="email">E-posta</label>
                                 </div>
                             </div>
-                            <div class="col-12">
+                            <div class="col-md-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Konu" name="Subject">
-                                    <label for="subject">Konu</label>
+                                    <input type="text" class="form-control" id="topicTitle" placeholder="Konu Başlığı" name="Title" required>
+                                    <label for="topicTitle">Konu Başlığı</label>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-floating">
+                                    @Html.DropDownListFor(X => X.MessageCategoryID, (List<SelectListItem>)ViewBag.v, new
+
+                                        { @class = "form-control" })
+
+                                    <label for="subject">Konuyu Seçin</label>
                                 </div>
                             </div>
                             <div class="col-12">

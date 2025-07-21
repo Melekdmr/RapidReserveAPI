@@ -40,3 +40,7 @@ A multi-layered web application built with **ASP.NET Core 8.0**, featuring a RES
  ```
 
 
+## 📱 User Interface Preview
+Below is a GIF showcasing the main page UI and user interaction flow:
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/Hoteller-RapidReserveAPI-GoogleChrome2025-07-2117-38-02-ezgif.com-crop%20(1).gif)

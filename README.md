@@ -7,6 +7,41 @@ A multi-layered web application built with **ASP.NET Core 8.0**, featuring a RES
 
 ---
 
+## 👤 User Interface Overview
+- Room Browsing: Users can view available rooms with details and images.  
+- Booking System: Users can create, update, or cancel reservations.  
+- Contact & Subscription: Users can send messages via contact form and subscribe to the mailing list.  
+- Profile Management: Users can update their profile information.  
+- Notification Center: Users receive alerts for booking confirmations and messages.  
+- Secure Access: Authentication ensures user-specific data privacy and protection.
+
+## 👨‍💼 Admin Panel Features
+- Full Data Management: Add, update, and delete rooms, guests, bookings, services, and testimonials.
+- Real-time Updates: Use of Ajax for smooth CRUD operations without page reloads.
+- Dashboard Overview: Visual stats on total bookings, guests, rooms, and messages.
+- Message Management: View, respond, and mark contact messages as read.
+- Role-Based Access: Only users with "Admin" role can access the admin panel; others are redirected.
+- Quick Navigation: Easy switch between admin panel and main site.
+- Custom Error Pages: Friendly 401 and 404 pages for unauthorized or missing pages.
+ 
+## 📦 NuGet Packages Used
+
+- **AutoMapper** – A convention-based object-object mapper
+- **AutoMapper.Extensions.Microsoft.DependencyInjection** – Integrates AutoMapper with ASP.NET Core dependency injection
+- **FluentValidation.AspNetCore** – FluentValidation support for ASP.NET Core
+- **FluentValidation.DependencyInjectionExtensions** – Enables FluentValidation to work with dependency injection
+- **Microsoft.AspNetCore.Identity** – Membership system for adding login functionality
+- **Microsoft.AspNetCore.Identity.EntityFrameworkCore** – Identity support with Entity Framework Core
+- **Microsoft.EntityFrameworkCore** – Core components for using EF Core in .NET
+- **Microsoft.EntityFrameworkCore.Design** – Design-time tools for EF Core (e.g., migrations)
+- **Microsoft.EntityFrameworkCore.SqlServer** – SQL Server database provider for EF Core
+- **Microsoft.EntityFrameworkCore.Tools** – Tools for working with EF Core (e.g., `Update-Database`, `Add-Migration`)
+- **Microsoft.VisualStudio.Web.CodeGeneration.Design** – Enables scaffolding (code generation) in ASP.NET Core projects
+- **NETCore.MailKit** – Enables sending emails using the MailKit SMTP client
+- **Swashbuckle.AspNetCore** – Provides Swagger integration for documenting and testing ASP.NET Core APIs
+
+
+
 ## 🚀 Tech Stack
 
 - ASP.NET Core 8.0 Web API
@@ -56,6 +91,9 @@ Secure user login with validation and error handling.
 
 ![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-21%20190038.png)
 New user sign-up with form checks and feedback.
+
+## 🛠️ Admin Panel – Media Management  
+Admins can upload, manage, and organize photos directly from the admin panel, ensuring up-to-date visual content across the platform.
 
 ## 📑 Swagger UI – API Documentation
 

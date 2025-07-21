@@ -37,4 +37,6 @@ A multi-layered web application built with **ASP.NET Core 8.0**, featuring a RES
  ┗ 📜HotelProject.sln           # Solution File
  ┗ 📜JWtProject                 # Json Web Token
  ┗ 📜Rapid Api                  # 🌐 RapidAPI Integration Layer (3rd-party APIs)
+ ```
+
 

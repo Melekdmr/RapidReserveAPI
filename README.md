@@ -81,21 +81,29 @@ A multi-layered web application built with **ASP.NET Core 8.0**, featuring a RES
 
 ![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/Hoteller-RapidReserveAPI-GoogleChrome2025-07-2117-38-02-ezgif.com-crop%20(1).gif)
 
-Here is a GIF that showcases the main page UI and the user interaction flow.
+🔹Here is a GIF that showcases the main page UI and the user interaction flow.
 
 ![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/localhost_44387_Default_Index_%20(1).png)
-Full-page screenshot of the Admin Panel highlighting core features and interface.
+🔹Full-page screenshot of the Admin Panel highlighting core features and interface.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/localhost_44387_Booking_Index_.png)
+🔹Create new reservations by selecting room type, number of adults and children, check-in/out dates, and
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/localhost_44387_Contact_Index_.png)
+🔹Submit messages with subject and content through the contact form for inquiries and feedback.
+
+
 
 ### 🔐 Login Screen
 
 ![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-21%20191300.png)
-Secure user login with validation and error handling.
+🔹Secure user login with validation and error handling.
 
 
 ### 📝 Register Screen
 
 ![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-21%20190038.png)
-New user sign-up with form checks and feedback.
+🔹New user sign-up with form checks and feedback.
 
 ## 🛠️ Admin Panel – Media Management 
 

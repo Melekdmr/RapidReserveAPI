@@ -83,6 +83,9 @@ A multi-layered web application built with **ASP.NET Core 8.0**, featuring a RES
 
 Here is a GIF that showcases the main page UI and the user interaction flow.
 
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/localhost_44387_Default_Index_%20(1).png)
+Full-page screenshot of the Admin Panel highlighting core features and interface.
+
 ### 🔐 Login Screen
 
 ![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-21%20191300.png)

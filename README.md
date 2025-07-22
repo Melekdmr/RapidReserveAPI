@@ -93,6 +93,8 @@ Secure user login with validation and error handling.
 New user sign-up with form checks and feedback.
 
 ## 🛠️ Admin Panel – Media Management  
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/admindashboard.png)
+
 Admins can upload, manage, and organize photos directly from the admin panel, ensuring up-to-date visual content across the platform.
 
 ## 📑 Swagger UI – API Documentation

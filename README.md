@@ -9,7 +9,8 @@ A multi-layered web application built with **ASP.NET Core 8.0**, featuring a RES
 
 ## 👤 User Interface Overview
 - Room Browsing: Users can view available rooms with details and images.  
-- Booking System: Users can create, update, or cancel reservations.  
+- Booking System: Users can create, update, or cancel reservations.
+- Employee Registration & Profile Management: Hotel staff can register and manage their profiles. 
 - Contact & Subscription: Users can send messages via contact form and subscribe to the mailing list.  
 - Profile Management: Users can update their profile information.  
 - Notification Center: Users receive alerts for booking confirmations and messages.  
@@ -20,6 +21,7 @@ A multi-layered web application built with **ASP.NET Core 8.0**, featuring a RES
 - Real-time Updates: Use of Ajax for smooth CRUD operations without page reloads.
 - Dashboard Overview: Visual stats on total bookings, guests, rooms, and messages.
 - Message Management: View, respond, and mark contact messages as read.
+- Real Email Sending: Ability to compose and send actual emails directly from the admin panel.
 - Role-Based Access: Only users with "Admin" role can access the admin panel; others are redirected.
 - Quick Navigation: Easy switch between admin panel and main site.
 - Custom Error Pages: Friendly 401 and 404 pages for unauthorized or missing pages.
@@ -92,10 +94,38 @@ Secure user login with validation and error handling.
 ![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-21%20190038.png)
 New user sign-up with form checks and feedback.
 
-## 🛠️ Admin Panel – Media Management  
-![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/admindashboard.png)
+## 🛠️ Admin Panel – Media Management 
 
-Admins can upload, manage, and organize photos directly from the admin panel, ensuring up-to-date visual content across the platform.
+**This section includes key screenshots of the Admin Panel, showcasing its various modules and functionalities in detail.**
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/admindashboard.png)
+🔹The Admin Dashboard provides a clear overview of reservations, customers, rooms, and staff, along with customer details and social media links.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/admin-user.png)
+🔹The Users table lists key details of all users for easy management.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/booking.png)
+🔹The Reservations page allows managing bookings with options to approve, cancel, delete, or mark as pending.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/inbox.png)
+🔹Displays all received messages for quick review and follow-up.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/sendmessage.png)
+🔹Shows all sent messages for tracking and reference.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/mail.png)
+🔹The Mail Sending page enables composing and sending emails directly from the admin panel.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/locatiob.png)
+🔹The Hotel Locations page displays and manages all hotel branches and their details.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/service.png)
+🔹The Hotel Services page lists and manages various guest amenities such as dining, sports, parties, gym, yoga, and more.
+
+![ ](https://github.com/Melekdmr/RapidReserveAPI/blob/master/Media/Ekran%20g%C3%B6r%C3%BCnt%C3%BCs%C3%BC%202025-07-22%20100738.png)
+🔹The Error 404 page informs users when they navigate to a non-existent or incorrect address, guiding them back to valid content.
+
+
+
 
 ## 📑 Swagger UI – API Documentation
 
@@ -147,3 +177,10 @@ Update-Database
 • Press Ctrl + F5 or click "Run Without Debugging" in Visual Studio
 
 ✅ Your API should now be up and running at https://localhost:PORT/swagger.
+
+## 💫Reflections & Growth ##
+Thank you for taking the time to explore this project. It has been a meaningful journey that greatly enhanced my backend development expertise, especially in crafting robust APIs and handling complex data management.
+
+**🔗I welcome your feedback and invite you to get in touch for any questions or collaboration opportunities.**
+
+**Connect with me on LinkedIn: [/in/melekdmr](https://www.linkedin.com/in/melekdmr/)**

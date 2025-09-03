@@ -1,4 +1,4 @@
-# 🏨 Hotel Management & Booking Dashboard (RapidAPI Integration)
+# 🏨 Hotel Management & Booking System (RapidAPI Integration)
 
 A multi-layered web application built with **ASP.NET Core 8.0**, featuring a RESTful API backend and an MVC frontend consuming that API. It uses **MSSQL** with Entity Framework Core and follows clean architectural separation for maintainability. The project also integrates external services via **RapidAPI** to display real-time data.
 

@@ -290,10 +290,7 @@ namespace HotelProject.DataAccessLayer.Migrations
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("MessageCategoryID"));
 
                     b.Property<string>("MessageCategoryName")
-<<<<<<< HEAD
                         .IsRequired()
-=======
->>>>>>> 638f7f3 (Initial commit)
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("MessageCategoryID");

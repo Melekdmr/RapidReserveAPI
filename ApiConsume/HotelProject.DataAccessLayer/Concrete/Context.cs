@@ -62,9 +62,8 @@ namespace HotelProject.DataAccessLayer.Concrete
 					
 				});
 			});
-<<<<<<< HEAD
-		}
-=======
+
+
 			builder.Entity<Contact>(entry =>
 			{
 				entry.HasOne(c => c.MessageCategory)
@@ -74,7 +73,6 @@ namespace HotelProject.DataAccessLayer.Concrete
 			});
 		}
 		
->>>>>>> 638f7f3 (Initial commit)
 
 		public DbSet<Room> Rooms { get; set; }
 		public DbSet<Service> Services { get; set; }
@@ -87,10 +85,8 @@ namespace HotelProject.DataAccessLayer.Concrete
 		public DbSet<Guest> Guests { get; set; }
 		public DbSet<Contact> Contacts { get; set; }
 		public DbSet<SendMessage> SendMessages{ get; set; }
-<<<<<<< HEAD
 		public DbSet<MessageCategory> MessageCategories{ get; set; }
-=======
-		public DbSet<MessageCategory> MessageCategories{ get; set;      }
->>>>>>> 638f7f3 (Initial commit)
+	
+		
 	}
 }

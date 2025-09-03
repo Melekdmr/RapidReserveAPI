@@ -1,6 +1,4 @@
 ﻿using HotelProject.WebUI.Dtos.AboutDto;
-using HotelProject.WebUI.Dtos.BookingDto;
-using HotelProject.WebUI.Models.Staff;
 using Microsoft.AspNetCore.Mvc;
 using Newtonsoft.Json;
 using System.Text;

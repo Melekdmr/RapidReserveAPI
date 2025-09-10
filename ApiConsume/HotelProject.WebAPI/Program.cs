@@ -43,6 +43,11 @@ builder.Services.AddScoped<ISendMessageService, SendMessageManager>();
 
 builder.Services.AddScoped<IMessageCategoryService, MessageCategoryManager>();
 builder.Services.AddScoped<IMessageCategoryDal, EfMessageCategoryDal>();
+builder.Services.AddScoped<IWorkLocationService, WorkLocationManager>();
+builder.Services.AddScoped<IWorkLocationDal, EfWorkLocationDal>();
+
+builder.Services.AddScoped<IAppUserService, AppUserManager>();
+builder.Services.AddScoped<IAppUserDal, EfAppUserDal>();
 
 builder.Services.AddAutoMapper(typeof(Program));
 //builder.Services.AddScoped

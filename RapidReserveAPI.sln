@@ -29,6 +29,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "JWTProject", "JWTProject", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebAPIJwt", "JWTProject\WebAPIJwt\WebAPIJwt.csproj", "{AD284744-4E80-468B-8B4C-57035B2D8115}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{00753C2E-627B-487A-8E09-7814832D52D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "HotelProject.UnitTests", "Test\HotelProject.UnitTests\HotelProject.UnitTests.csproj", "{D0431EBE-41A2-4EDE-8EB6-664E9656C7D6}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,10 @@ Global
 		{AD284744-4E80-468B-8B4C-57035B2D8115}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{AD284744-4E80-468B-8B4C-57035B2D8115}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{AD284744-4E80-468B-8B4C-57035B2D8115}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0431EBE-41A2-4EDE-8EB6-664E9656C7D6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0431EBE-41A2-4EDE-8EB6-664E9656C7D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0431EBE-41A2-4EDE-8EB6-664E9656C7D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0431EBE-41A2-4EDE-8EB6-664E9656C7D6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -80,6 +88,7 @@ Global
 		{EBC11B21-19BC-43C7-8880-A2D645D18CEE} = {0F0CB685-19F6-4ED1-9DED-0BF5B3FA520A}
 		{11BE9BE6-782F-4006-827A-CF9172411200} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{AD284744-4E80-468B-8B4C-57035B2D8115} = {87068D32-00F8-47B1-92F0-6E7E4DEEF3F3}
+		{D0431EBE-41A2-4EDE-8EB6-664E9656C7D6} = {00753C2E-627B-487A-8E09-7814832D52D2}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {60CFA2BD-509D-42AE-B30F-131B5F719BCF}

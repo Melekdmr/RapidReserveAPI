@@ -15,10 +15,16 @@ namespace HotelProject.WebAPI.Controllers
 			_appUserService = appUserService;
 		}
 
+		//[HttpGet]
+		//public IActionResult AppUserListWithWorkLocation()
+		//{
+		//	var values = _appUserService.TUserListWithWorkLocation();
+		//	return Ok(values);
+		//}
 		[HttpGet]
-		public IActionResult AppUserListWithWorkLocation()
+		public IActionResult AppUserList()
 		{
-			var values = _appUserService.TUserListWithWorkLocation();
+			var values = _appUserService.TGetList();
 			return Ok(values);
 		}
 	}

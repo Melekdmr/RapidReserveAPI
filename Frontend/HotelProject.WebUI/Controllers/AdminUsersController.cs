@@ -9,18 +9,7 @@ namespace HotelProject.WebUI.Controllers
 {
 	public class AdminUsersController : Controller
 	{
-		//private readonly UserManager<AppUser> _userManager;
-
-		//public AdminUsersController(UserManager<AppUser> userManager)
-		//{
-		//	_userManager = userManager;
-		//}
-
-		//public IActionResult Index()
-		//{
-		//	var values = _userManager.Users.ToList();
-		//	return View(values);
-		//}
+		
 
 		private readonly IHttpClientFactory _httpClientFactory;
 
@@ -29,7 +18,31 @@ namespace HotelProject.WebUI.Controllers
 			_httpClientFactory = httpClientFactory;
 		}
 
-		public async Task<IActionResult> Index()
+		//public async Task<IActionResult> Index()
+		//{
+		//	try
+		//	{
+		//		var client = _httpClientFactory.CreateClient();
+		//		var responseMessage = await client.GetAsync("http://localhost:5035/api/AppUser");
+
+		//		if (responseMessage.IsSuccessStatusCode)
+		//		{
+		//			var jsonData = await responseMessage.Content.ReadAsStringAsync();
+		//			var values = JsonConvert.DeserializeObject<List<ResultAppUserDto>>(jsonData);
+		//			return View(values ?? new List<ResultAppUserDto>());
+		//		}
+
+		//		// Hata durumunda boş liste göster
+		//		return View(new List<ResultAppUserDto>());
+		//	}
+		//	catch (Exception ex)
+		//	{
+		//		// Log the exception
+		//		Console.WriteLine($"Index Error: {ex.Message}");
+		//		return View(new List<ResultAppUserDto>());
+		//	}
+		//}
+		public async Task<IActionResult> UserList()
 		{
 			try
 			{
@@ -39,18 +52,18 @@ namespace HotelProject.WebUI.Controllers
 				if (responseMessage.IsSuccessStatusCode)
 				{
 					var jsonData = await responseMessage.Content.ReadAsStringAsync();
-					var values = JsonConvert.DeserializeObject<List<ResultAppUserDto>>(jsonData);
-					return View(values ?? new List<ResultAppUserDto>());
+					var values = JsonConvert.DeserializeObject<List<ResultAppUserListDto>>(jsonData);
+					return View(values ?? new List<ResultAppUserListDto>());
 				}
 
 				// Hata durumunda boş liste göster
-				return View(new List<ResultAppUserDto>());
+				return View(new List<ResultAppUserListDto>());
 			}
 			catch (Exception ex)
 			{
 				// Log the exception
 				Console.WriteLine($"Index Error: {ex.Message}");
-				return View(new List<ResultAppUserDto>());
+				return View(new List<ResultAppUserListDto>());
 			}
 		}
 

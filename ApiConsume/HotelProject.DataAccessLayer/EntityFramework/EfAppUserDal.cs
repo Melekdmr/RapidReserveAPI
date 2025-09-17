@@ -30,5 +30,11 @@ namespace HotelProject.DataAccessLayer.EntityFramework
 		{
 			return _context.Users.Include(x => x.WorkLocation).ToList(); /*Kullanıcıların bağlı olduğu WorkLocation tablosunu da sorguya dahil et (Eager Loading).*/
 		}
+
+		public List<AppUser> UsersListWithWorkLocations()
+		{
+			var values= _context.Users.Include(x=>x.WorkLocation).ToList();
+			return values;
+		}
 	}
 }

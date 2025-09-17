@@ -26,6 +26,12 @@ namespace HotelProject.DataAccessLayer.EntityFramework
 		{
 			_context = context;
 		}
+
+		public int AppUserCount()
+		{
+			return _context.Users.Count();
+		}
+
 		public List<AppUser> UserListWithWorkLocation()
 		{
 			return _context.Users.Include(x => x.WorkLocation).ToList(); /*Kullanıcıların bağlı olduğu WorkLocation tablosunu da sorguya dahil et (Eager Loading).*/
@@ -36,5 +42,7 @@ namespace HotelProject.DataAccessLayer.EntityFramework
 			var values= _context.Users.Include(x=>x.WorkLocation).ToList();
 			return values;
 		}
+
+		
 	}
 }

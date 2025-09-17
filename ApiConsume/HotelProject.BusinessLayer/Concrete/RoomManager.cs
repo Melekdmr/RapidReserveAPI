@@ -33,6 +33,11 @@ namespace HotelProject.BusinessLayer.Concrete
 			return _roomdal.GetList();
 		}
 
+		public int TGetRoomCount()
+		{
+			return _roomdal.GetRoomCount();
+		}
+
 		public void TInsert(Room t)
 		{
 			_roomdal.Insert(t);

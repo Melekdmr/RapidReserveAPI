@@ -1,0 +1,21 @@
+﻿@model List<ResultLast4Staff>
+
+    <div class="row">
+        @foreach (var staff in Model)
+        {
+            <div class="col-lg-3 col-sm-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="text-center">
+                            <!-- Personel fotoğrafı -->
+                            <img src="@staff.SocialMedia1" class="rounded-circle" alt="" width="100" height="100" />
+                            <!-- Personel adı -->
+                            <h5 class="mt-3 mb-1">@staff.Name</h5>
+                            <!-- Personel pozisyonu -->
+                            <p class="m-0">@staff.Title</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>

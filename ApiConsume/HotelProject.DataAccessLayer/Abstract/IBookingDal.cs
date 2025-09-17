@@ -9,5 +9,6 @@ namespace HotelProject.DataAccessLayer.Abstract
 {
 	public interface IBookingDal:IGenericDal<Booking>
 	{
+		int GetBookingCount();
 	}
 }

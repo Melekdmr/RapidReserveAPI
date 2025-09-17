@@ -12,10 +12,18 @@ namespace HotelProject.DataAccessLayer.EntityFramework
 {
 	public class EfBookingDal : GenericRepository<Booking>, IBookingDal
 	{
+		private readonly Context _context;
+
 		public EfBookingDal(Context context) : base(context)
 		{
+			_context = context;
+		}
+
+		public int GetBookingCount()
+		{
+			return _context.Bookings.Count();
 		}
 	}
-	
-	}
+
+}
 

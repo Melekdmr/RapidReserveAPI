@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace HotelProject.WebUI.Controllers
 {
-	
+
 	public class SettingsController : Controller
 	{
 		private readonly UserManager<AppUser> _userManager;
@@ -27,9 +27,22 @@ namespace HotelProject.WebUI.Controllers
 			return View(userEditViewModel);
 		}
 		[HttpPost]
-		public IActionResult Index(string x)
+		public async Task<IActionResult> Index(UserEditViewModel userEditViewModel)
 		{
+			if (userEditViewModel.Password == userEditViewModel.ConfirmPassword)
+			{
+				var user = await _userManager.FindByNameAsync(User.Identity.Name);
+				user.Name = userEditViewModel.Name;
+				user.SurName = userEditViewModel.Surname;
+				user.Email = userEditViewModel.Email;
+				user.UserName = userEditViewModel.UserName;
+				user.PasswordHash = _userManager.PasswordHasher.HashPassword(user, userEditViewModel.Password);
+				await _userManager.UpdateAsync(user);
+				return RedirectToAction("Index", "Login");
+
+			}
 			return View();
+			
 		}
 	}
 }

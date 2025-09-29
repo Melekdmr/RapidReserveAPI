@@ -27,40 +27,96 @@ namespace HotelProject.WebUI.Controllers
 			}
 			return View();
 		}
-		public async Task<IActionResult> ApprovedReservation(int id)
+
+
+
+		public async Task<IActionResult> ApprovedReservation2(int id)
 		{
-			try
-			{
+
 				// Mevcut rezervasyonu getir
 				var client = _httpClientFactory.CreateClient();
 				var getResponse = await client.GetAsync($"http://localhost:5035/api/Booking/{id}");
 
-				if (getResponse.IsSuccessStatusCode)
+			
+			
+			var responseMessage = await client.GetAsync($"http://localhost:5035/api/Booking/BookingApproved?id={id}");
+
+			if (responseMessage.IsSuccessStatusCode)
 				{
-					var jsonData = await getResponse.Content.ReadAsStringAsync();
-					var booking = JsonConvert.DeserializeObject<ResultBookingDto>(jsonData);
+				return RedirectToAction("Index");
+			}
 
 					// Status güncelle
 					booking.Status = "Onaylandı";
 
-					// API'ye gönder (ID ile)
-					var updateJsonData = JsonConvert.SerializeObject(booking);
-					StringContent stringContent = new StringContent(updateJsonData, Encoding.UTF8, "application/json");
-					var responseMessage = await client.PutAsync($"http://localhost:5035/api/Booking/{id}", stringContent);
+
+			return View();
+		}
+		public async Task<IActionResult> ReservationCancel(int id)
+		{
+
+		
+			var client = _httpClientFactory.CreateClient();
+
+
+
+			var responseMessage = await client.GetAsync($"http://localhost:5035/api/Booking/BookingCancel?id={id}");
 
 					if (responseMessage.IsSuccessStatusCode)
 					{
-						TempData["Success"] = "Rezervasyon onaylandı!";
+				return RedirectToAction("Index");
 					}
+
+
+
+			return View();
 				}
-			}
-			catch (Exception ex)
+
+		public async Task<IActionResult> ReservationWaiting(int id)
+		{
+
+
+			var client = _httpClientFactory.CreateClient();
+
+
+
+			var responseMessage = await client.GetAsync($"http://localhost:5035/api/Booking/BookingWaiting?id={id}");
+
+			if (responseMessage.IsSuccessStatusCode)
 			{
-				TempData["Error"] = $"Hata: {ex.Message}";
+				return RedirectToAction("Index");
 			}
 
-			return RedirectToAction("Index");
+
+
+			return View();
+		}
+		public async Task<IActionResult> ApprovedReservation(ResultBookingDto resultBookingDto)
+		{
+
+			// Mevcut rezervasyonu getir
+			var client = _httpClientFactory.CreateClient();
+
+			var JsonData = JsonConvert.SerializeObject(resultBookingDto);
+			StringContent stringContent = new StringContent(JsonData, Encoding.UTF8, "application/json");
+			var responseMessage = await client.PutAsync($"http://localhost:5035/api/Booking/", stringContent);
+
+			if (responseMessage.IsSuccessStatusCode)
+			{
+				return RedirectToAction("Index");
+			}
+
+
+
+			return View();
 		}
 
+
+
+		
+
+		
+
 	}
 	}
+

@@ -40,14 +40,14 @@
                         <span class="badge badge-primary px-2">@item.Status</span>
                     </td>
                     <td>
-                        <a href="/BookingAdmin/ApprovedReservation/@item.BookingID" class="btn btn-outline-success">
+                        <a href="/BookingAdmin/ApprovedReservation2/@item.BookingID" class="btn btn-outline-success">
                             <i class="fas fa-check-circle"></i> Onayla
                         </a>
                     </td>
-                    <td>  <a href="#" class="btn btn-outline-danger"><i class="fas fa-times-circle"></i> İptal Et </a>  </td>
+                    <td>  <a href="/BookingAdmin/ReservationCancel/@item.BookingID" class="btn btn-outline-danger"><i class="fas fa-times-circle"></i> İptal Et </a>  </td>
                     <td>
-                        <a href="#" class="btn btn-outline-primary">
-                            <i class="fas fa-hourglass-half"></i> Beklet
+                        <a href="/BookingAdmin/ReservationWaiting/@item.BookingID" class="btn btn-outline-primary">
+                            <i class="fas fa-hourglass-half"></i> Beklemeye Al
                         </a>
                     </td>
                     <td>

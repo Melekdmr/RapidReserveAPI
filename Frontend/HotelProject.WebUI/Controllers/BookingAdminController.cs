@@ -33,20 +33,18 @@ namespace HotelProject.WebUI.Controllers
 		public async Task<IActionResult> ApprovedReservation2(int id)
 		{
 
-				// Mevcut rezervasyonu getir
-				var client = _httpClientFactory.CreateClient();
+			// Mevcut rezervasyonu getir
+			var client = _httpClientFactory.CreateClient();
 
 			
 			
 			var responseMessage = await client.GetAsync($"http://localhost:5035/api/Booking/BookingApproved?id={id}");
 
 			if (responseMessage.IsSuccessStatusCode)
-				{
+			{
 				return RedirectToAction("Index");
 			}
 
-					// Status güncelle
-					booking.Status = "Onaylandı";
 
 
 			return View();
@@ -61,15 +59,15 @@ namespace HotelProject.WebUI.Controllers
 
 			var responseMessage = await client.GetAsync($"http://localhost:5035/api/Booking/BookingCancel?id={id}");
 
-					if (responseMessage.IsSuccessStatusCode)
-					{
+			if (responseMessage.IsSuccessStatusCode)
+			{
 				return RedirectToAction("Index");
-					}
+			}
 
 
 
 			return View();
-				}
+		}
 
 		public async Task<IActionResult> ReservationWaiting(int id)
 		{
@@ -117,5 +115,5 @@ namespace HotelProject.WebUI.Controllers
 		
 
 	}
-	}
+}
 

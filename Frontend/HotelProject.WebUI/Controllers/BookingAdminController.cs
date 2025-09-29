@@ -35,7 +35,6 @@ namespace HotelProject.WebUI.Controllers
 
 				// Mevcut rezervasyonu getir
 				var client = _httpClientFactory.CreateClient();
-				var getResponse = await client.GetAsync($"http://localhost:5035/api/Booking/{id}");
 
 			
 			
